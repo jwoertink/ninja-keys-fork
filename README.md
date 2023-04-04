@@ -1,3 +1,7 @@
+# NOTE
+
+This is a fork of [NinjaKeys](https://github.com/ssleptsov/ninja-keys) that I'm using since the project seems to have stalled for a bit.
+
 # Ninja Keys
 
 Keyboard shortcut interface for your website that works with Vanilla JS, Vue, and React.

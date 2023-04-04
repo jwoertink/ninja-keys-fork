@@ -11,15 +11,6 @@ import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { join } from 'lit/directives/join.js';
 import '@material/mwc-icon';
 let NinjaAction = class NinjaAction extends LitElement {
-    constructor() {
-        super();
-        this.selected = false;
-        /**
-         * Display hotkey as separate buttons on UI or as is
-         */
-        this.hotKeysJoinedView = true;
-        this.addEventListener('click', this.click);
-    }
     /**
      * Scroll to show element
      */
@@ -32,6 +23,15 @@ let NinjaAction = class NinjaAction extends LitElement {
             bubbles: true,
             composed: true,
         }));
+    }
+    constructor() {
+        super();
+        this.selected = false;
+        /**
+         * Display hotkey as separate buttons on UI or as is
+         */
+        this.hotKeysJoinedView = true;
+        this.addEventListener('click', this.click);
     }
     updated(changedProperties) {
         if (changedProperties.has('selected')) {

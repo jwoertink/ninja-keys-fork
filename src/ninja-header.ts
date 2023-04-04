@@ -115,13 +115,17 @@ export class NinjaHeader extends LitElement {
   }
 
   setSearch(value: string) {
-    if (this._inputRef.value) {
+    if (this._inputRef && this._inputRef.value) {
       this._inputRef.value.value = value;
     }
   }
 
   focusSearch() {
-    requestAnimationFrame(() => (this._inputRef && this._inputRef.value!.focus()));
+    requestAnimationFrame(() => {
+      if (this._inputRef && this._inputRef.value) {
+        this._inputRef.value!.focus()
+      }
+    });
   }
 
   private _handleInput(event: Event) {
